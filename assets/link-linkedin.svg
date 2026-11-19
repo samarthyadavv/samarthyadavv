@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="89" height="32" viewBox="0 0 89 32" role="img" aria-labelledby="title description">
+  <title id="title">LinkedIn</title>
+  <desc id="description">LinkedIn</desc>
+<rect x="0.6" y="0.6" width="87.8" height="31" rx="7" fill="#292826" stroke="#5d574e" />
+<rect x="9" y="9" width="13" height="13" rx="2" fill="#e2d6c2" />
+<text x="10" y="19.5" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="11" font-weight="800" fill="#292826" letter-spacing="0" text-anchor="start" >in</text>
+<text x="28" y="20.5" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="12.5" font-weight="650" fill="#ecdfcc" letter-spacing="0" text-anchor="start" >LinkedIn</text>
+</svg>
