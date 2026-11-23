@@ -1,76 +1,38 @@
-<h1 align="center">Samarth Yadav</h1>
+# Samarth Yadav
 
-<p align="center">
-  <strong>Full-stack engineer building dependable developer tools, web products, and cloud-native systems.</strong><br />
-  Go · TypeScript · React · Node.js · SQL · Docker
-</p>
+Based in Mumbai, I build Python backends for model evaluation and document search, write Go editor features for ttt, and contribute TypeScript fixes to Cloudflare’s developer tools.
 
-<p align="center">
-  <a href="https://github.com/samarthyadavv?tab=repositories">Projects</a> ·
-  <a href="https://github.com/samarthyadavv?tab=stars">Open source</a> ·
-  <a href="https://www.linkedin.com/in/thesamarthyadav/">LinkedIn</a>
-</p>
+[Read my merged multi-cursor clipboard patch](https://github.com/eugenioenko/ttt/pull/1095/files) · [Browse my public pull requests](https://github.com/search?q=is%3Apr+is%3Apublic+author%3Asamarthyadavv&type=pullrequests)
 
----
+## Two cursors, one undo
 
-## Engineering, with public proof
+In ttt, the status bar could show two cursors while Paste changed text at only the primary one. I made the editor give each cursor one clipboard line when the counts match. It merges overlapping selections and applies edits from the bottom up so an insertion can’t shift the next target. The whole paste goes onto the undo stack as one edit.
 
-I work across product surfaces and systems boundaries: user-facing TypeScript/React interfaces, Go services, databases, testing, and delivery. My recent open-source work focuses on correctness under real conditions—concurrency, stale state, multi-user behavior, retries, API stability, and developer experience.
+The Go tests put the cursors after `a` and `x`.
 
-### Merged upstream contributions
-
-| Project | Contribution | Technical outcome |
+| Action | First line | Second line |
 | --- | --- | --- |
-| [Cloudflare Workers SDK](https://github.com/cloudflare/workers-sdk/pull/17102) | Fixed Wrangler Basin SQL query failure exit handling | Prevented query failures from being treated as successful command completion; added regression coverage. |
-| [ttt](https://github.com/eugenioenko/ttt/pull/1668) | Built filesystem path completion | Added async workspace-relative and absolute path completion, stale-result protection, settings support, and end-to-end tests. |
-| [ttt](https://github.com/eugenioenko/ttt/pull/1552) | Improved plugin command discoverability | Made command-palette entries identify their owning plugin without changing command IDs, callbacks, shortcuts, or Lua API behavior. |
-| [ttt](https://github.com/eugenioenko/ttt/pull/1622) | Added multi-user plugin-settings coverage | Tested per-user disable/re-enable flows, restart persistence, user isolation, and unchanged shared plugin files. |
-| [ttt](https://github.com/eugenioenko/ttt/pull/1095) | Implemented multi-cursor clipboard editing | Added copy/cut/paste across cursors, overlap normalization, line distribution, one-step undo, Go tests, and functional regression coverage. |
+| Before | `abc` | `xyz` |
+| Paste `Q\nR` | `aQbc` | `xRyz` |
+| Undo once | `abc` | `xyz` |
 
-### In active upstream review
+[See the paste and undo assertions](https://github.com/eugenioenko/ttt/blob/e83e9fc22a30ba9b652227ca6b4f6d4363f80237/internal/ui/editor_widget_multicursor_clipboard_test.go#L171-L219)
 
-These are real submitted changes—not claimed as merged work.
+## More work merged upstream
 
-- [ntfy #2197](https://github.com/binwiederhier/ntfy/pull/2197) — opt-in upstream poll retries with exponential backoff, jitter, expiry/shutdown handling, and race-tested coverage.
-- [Prometheus #20528](https://github.com/prometheus/prometheus/pull/20528) — prevents Agent mode from exposing Alertmanager notification metrics that can create false monitoring alerts.
-- [Stakater Reloader #1301](https://github.com/stakater/Reloader/pull/1301) — preserves deployment reload pause windows across concurrent ConfigMap/Secret updates using Kubernetes resource-version retries.
-- [Gitea #40473](https://github.com/go-gitea/gitea/pull/40473) — syncs LDAP-managed GPG public keys while preserving manually uploaded keys.
-- [Gitea #40378](https://github.com/go-gitea/gitea/pull/40378) — adds stable sorting for user and organization repository-list API endpoints.
+- **Miniflare** now passes JSON and metadata options through local KV bulk reads, so callers can retrieve parsed values and per-key metadata together. [KV bulk-read patch](https://github.com/cloudflare/workers-sdk/pull/17101)
+- **Wrangler** now exits with status `1` when the Basin SQL service rejects a query, so shell scripts can detect the failure and read the database errors on stderr. [CLI error-handling patch](https://github.com/cloudflare/workers-sdk/pull/17102)
+- **ttt** completes filesystem paths in the background and discards a directory listing if the cursor moves before it arrives. [Path completion patch](https://github.com/eugenioenko/ttt/pull/1668)
 
-## Selected product work
+## Backends and product work
 
-### [Gauge AI](https://github.com/samarthyadavv/gauge-ai)
-A recruiter-facing AI product built as a deployable backend and separate frontend experience.
+- **Gauge AI** compares completed model runs with matching dataset fingerprints and shows both outputs for each prompt that changed from passing to failing. [Comparison endpoint](https://github.com/samarthyadavv/gauge-ai/blob/bf1635f2254305080a4b1846a39c5fafb35bf8d3/backend/app/main.py#L451-L482)
+- **Sentinel** checks the workspace on both a passage and its parent document before ranking the passages by vector distance for a cited answer. [Retrieval query](https://github.com/samarthyadavv/sentinel/blob/82bc3b09726774a1535a2ff644ed068ddeb43093/backend/app/main.py#L441-L459)
+- At **ProjectBoard**, I worked across Vue and Go on classroom features, including class-edit permissions and the in-app and email notifications students received when a teacher added them. [ProjectBoard](https://projectboard.world/)
 
-**Focus:** API design, deployability, product demo workflows, AI-enabled application features.
+## Patches in progress
 
-### [React Admin Dashboard](https://github.com/samarthyadavv/React-Admin-Dashboard)
-Responsive operations dashboard with data grids, charts, calendar scheduling, Kanban, and theme support.
+- **Open · llama.cpp** — I proposed replacing recursive graph traversal with an explicit stack and splitting a WebGPU lookup table to fit WebKit’s limit. [Graph and shader patch](https://github.com/ggml-org/llama.cpp/pull/32913)
+- **Draft · Gitea** — My repository-list API change uses the repository ID to break ties between timestamps so pagination stays consistent. [Repository sorting proposal](https://github.com/go-gitea/gitea/pull/40378)
 
-**Stack:** React, Tailwind CSS, Syncfusion  
-[Live demo](https://react-admin-dashboard-2-l7nd6kc0f-samarthyadavv.vercel.app/)
-
-### ProjectBoard · Engineering.com
-Contributed to a remote product serving large education and engineering communities.
-
-**Work included:** Go permission checks, Vue product flows, class-member notifications, and account-security workflows backed by MySQL and MongoDB.
-
-## Technical focus
-
-```text
-Backend & systems     Go, Node.js, REST/GraphQL, gRPC, Redis, RabbitMQ
-Web product           TypeScript, React, Vue, Next.js, Tailwind CSS
-Data                  PostgreSQL, MySQL, MongoDB
-Delivery              Docker, GitHub Actions, AWS, CI/CD
-Quality               Unit, integration, regression, and end-to-end testing
-```
-
-## What I value
-
-- Make the observable behavior correct before polishing the abstraction.
-- Treat tests, documentation, and upgrade paths as part of the feature.
-- State the status of work clearly: merged, under review, or exploratory.
-
-<p align="center">
-  <i>Open to conversations about full-stack, backend, developer-tooling, and cloud engineering.</i>
-</p>
+Open to remote backend, full-stack, and developer-tooling roles. [Connect on LinkedIn](https://www.linkedin.com/in/thesamarthyadav/)
