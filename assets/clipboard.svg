@@ -3,11 +3,20 @@
   <desc id="description">A regression test pastes Q and R after the first character of abc and xyz. The buffer becomes aQbc and xRyz. One undo restores both original lines.</desc>
 <defs><linearGradient id="paper" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#f5ecdb"/><stop offset="100%" stop-color="#e9dec8"/></linearGradient></defs>
 <style>
-.pasted {opacity:1;animation:paste 8s step-end infinite}
-.restored {opacity:0;animation:undo 8s step-end infinite}
-@keyframes paste {0%,64% {opacity:1} 65%,96% {opacity:0} 97%,100% {opacity:1}}
-@keyframes undo {0%,64% {opacity:0} 65%,96% {opacity:1} 97%,100% {opacity:0}}
-@media (prefers-reduced-motion: reduce) {.pasted,.restored {animation:none}}
+  /* The resting frame shows the pasted text if motion is disabled. */
+  .pasted { opacity: 1; animation: pasted 7.2s step-end infinite; }
+  .restored { opacity: 0; animation: original 7.2s step-end infinite; }
+  .phase-ready { opacity: 0; animation: ready 7.2s step-end infinite; }
+  .phase-undo { opacity: 0; animation: undone 7.2s step-end infinite; }
+
+  @keyframes pasted   { 0%, 74%, 100% { opacity: 0; } 30% { opacity: 1; } }
+  @keyframes original { 0%, 74%, 100% { opacity: 1; } 30% { opacity: 0; } }
+  @keyframes ready    { 0% { opacity: 1; } 30%, 100% { opacity: 0; } }
+  @keyframes undone   { 0%, 30% { opacity: 0; } 74%, 100% { opacity: 1; } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .pasted, .restored, .phase-ready, .phase-undo { animation: none; }
+  }
 </style>
 <rect x="0.7" y="0.7" width="958.6" height="288.6" rx="16" fill="url(#paper)" stroke="#bbad96" />
 <g transform="translate(34 24) scale(0.94)" fill="none" stroke="#775089" stroke-width="1.75" stroke-linecap="round"><path d="M3 4v11M3 5c0 5 9 1 9 7"/><circle cx="3" cy="3" r="2"/><circle cx="3" cy="16" r="2"/><circle cx="12" cy="14" r="2"/></g>
@@ -38,7 +47,8 @@
 <g class="pasted"><rect x="84.5" y="142" width="15" height="25" rx="3" fill="#3c4535" /><text x="85" y="162" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="24" font-weight="700" fill="#ffb188" letter-spacing="0" text-anchor="start" >R</text><text x="100" y="162" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="24" font-weight="500" fill="#ecece1" letter-spacing="0" text-anchor="start" >yz</text><path d="M100 142v25" stroke="#ffb188" stroke-width="2"/></g>
 <g class="restored" opacity="0"><text x="85" y="162" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="24" font-weight="500" fill="#ecece1" letter-spacing="0" text-anchor="start" >yz</text><path d="M85 142v25" stroke="#b2dac4" stroke-width="2"/></g>
 <g class="pasted"><text x="18" y="205" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#ffbe98" letter-spacing="0" text-anchor="start" >Paste applied</text></g>
-<g class="restored" opacity="0"><text x="18" y="205" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#badfc5" letter-spacing="0" text-anchor="start" >Undo applied</text></g>
+<g class="phase-ready" opacity="0"><text x="18" y="205" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#ded8c8" letter-spacing="0" text-anchor="start" >Ready to paste</text></g>
+<g class="phase-undo" opacity="0"><text x="18" y="205" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="13" font-weight="650" fill="#badfc5" letter-spacing="0" text-anchor="start" >Undo applied</text></g>
 <text x="392" y="205" font-family="ui-monospace, SFMono-Regular, Consolas, &#x27;Liberation Mono&#x27;, monospace" font-size="12" font-weight="500" fill="#bec9b8" letter-spacing="0" text-anchor="end" >2 cursors</text>
 <circle cx="386" cy="19" r="3.2" fill="#c3dcc0"/></g>
 </svg>

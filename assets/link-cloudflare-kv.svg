@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="150" height="32" viewBox="0 0 150 32" role="img" aria-labelledby="title">
+  <title id="title">Read the Cloudflare KV diff</title>
+  <rect x=".7" y=".7" width="148.6" height="30.6" rx="7" fill="#ffb087" stroke="#b87857"/>
+  <g color="#2c201a"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="m12 11-4 5 4 5m7-10 4 5-4 5m-2-12-3 14"/></g></g>
+  <text x="30" y="20.5" fill="#2c201a" font-family="system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" font-size="12.5" font-weight="650">Cloudflare KV diff</text>
+  <path d="M135 12h5v5m0-5-7 7" fill="none" stroke="#2c201a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

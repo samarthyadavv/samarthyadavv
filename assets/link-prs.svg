@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="106" height="32" viewBox="0 0 106 32" role="img" aria-labelledby="title description">
-  <title id="title">Merged PRs</title>
-  <desc id="description">Merged PRs</desc>
-<rect x="0.6" y="0.6" width="104.8" height="31" rx="7" fill="#ffac83" stroke="#ae765d" />
-<g transform="translate(9 8) scale(0.8)" fill="none" stroke="#2f201b" stroke-width="1.75" stroke-linecap="round"><path d="M3 4v11M3 5c0 5 9 1 9 7"/><circle cx="3" cy="3" r="2"/><circle cx="3" cy="16" r="2"/><circle cx="12" cy="14" r="2"/></g>
-<text x="28" y="20.5" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="12.5" font-weight="650" fill="#2f201b" letter-spacing="0" text-anchor="start" >Merged PRs</text>
+  <title id="title">All my PRs</title>
+  <desc id="description">All my PRs</desc>
+<rect x="0.6" y="0.6" width="104.8" height="31" rx="7" fill="#302d29" stroke="#64594c" />
+<g transform="translate(9 8) scale(0.8)" fill="none" stroke="#f5e6cf" stroke-width="1.75" stroke-linecap="round"><path d="M3 4v11M3 5c0 5 9 1 9 7"/><circle cx="3" cy="3" r="2"/><circle cx="3" cy="16" r="2"/><circle cx="12" cy="14" r="2"/></g>
+<text x="28" y="20.5" font-family="Inter, -apple-system, BlinkMacSystemFont, &#x27;Segoe UI&#x27;, Arial, sans-serif" font-size="12.5" font-weight="650" fill="#f5e6cf" letter-spacing="0" text-anchor="start" >All my PRs</text>
 </svg>
