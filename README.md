@@ -28,7 +28,7 @@ The Go tests put the cursors after `a` and `x`.
 
 - **Gauge AI** compares completed model runs with matching dataset fingerprints and shows both outputs for each prompt that changed from passing to failing. [Comparison endpoint](https://github.com/samarthyadavv/gauge-ai/blob/bf1635f2254305080a4b1846a39c5fafb35bf8d3/backend/app/main.py#L451-L482)
 - **Sentinel** checks the workspace on both a passage and its parent document before ranking the passages by vector distance for a cited answer. [Retrieval query](https://github.com/samarthyadavv/sentinel/blob/82bc3b09726774a1535a2ff644ed068ddeb43093/backend/app/main.py#L441-L459)
-- At **ProjectBoard**, I worked across Vue and Go on classroom features, including class-edit permissions and the in-app and email notifications students received when a teacher added them. [ProjectBoard](https://projectboard.world/)
+- At **ProjectBoard**, I implemented classroom workflows in Vue, class-edit permission checks in Go, and the in-app and email notifications students received when a teacher added them to a class. [ProjectBoard](https://projectboard.world/)
 
 ## Patches in progress
 
