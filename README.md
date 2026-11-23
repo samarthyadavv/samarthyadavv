@@ -8,8 +8,8 @@
 I build Python backends for model evaluation and document search. My merged work includes **two fixes in Cloudflare Workers SDK** and **four contributions to the ttt editor**. I’m based in Mumbai and open to remote backend, full-stack, and developer-tooling roles.
 
 <p>
-  <a href="https://github.com/cloudflare/workers-sdk/pull/17101/files"><img src="./assets/link-cloudflare-kv.svg" height="32" alt="Read the merged Cloudflare KV diff" /></a>
-  <a href="https://github.com/eugenioenko/ttt/pull/1095/files"><img src="./assets/link-ttt-clipboard.svg" height="32" alt="Read the merged ttt clipboard diff" /></a>
+  <a href="https://github.com/cloudflare/workers-sdk/pull/17101/files"><img src="https://raw.githubusercontent.com/samarthyadavv/samarthyadavv/15d45fdd67467b6f5bc64a8e7820232cee508f5a/assets/link-cloudflare-kv.svg" height="32" alt="Read the merged Cloudflare KV diff" /></a>
+  <a href="https://github.com/eugenioenko/ttt/pull/1095/files"><img src="https://raw.githubusercontent.com/samarthyadavv/samarthyadavv/15d45fdd67467b6f5bc64a8e7820232cee508f5a/assets/link-ttt-clipboard.svg" height="32" alt="Read the merged ttt clipboard diff" /></a>
   <a href="https://github.com/search?q=is%3Apr+is%3Apublic+author%3Asamarthyadavv&amp;type=pullrequests"><img src="./assets/link-prs.svg" height="32" alt="Browse all my public pull requests" /></a>
   <a href="https://www.linkedin.com/in/thesamarthyadav/"><img src="./assets/link-linkedin.svg" height="32" alt="Connect with Samarth on LinkedIn" /></a>
 </p>
